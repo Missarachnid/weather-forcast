@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Angular.js">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link href="https://fonts.googleapis.com/css?family=Eczar:500,700" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/img/mkfav.png">
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+  <body ng-app="myapp"  ng-controller="WeatherController">
+      <div class="center-block">
+        <div class="container">
+          <div id="weather">
+    
+            <div id="communication">
+            </div>
+              <h3 id="city">{{ weatherNow.city }}</h3>
+              <p id=time>{{ weatherNow.timeDate }}</p>
+              <div class="bg center-block">
+                <div id="icon"><img ng-src="{{ weatherNow.imageSrc }}">
+                </div>
+              </div>
+              <div>
+                <h4 id="description">{{ weatherNow.description }}</h4>
+              </div>
+               
+              <div class="buttons">
+                <button class="btn" id="celsius" ng-click="unitChange(false)">&#176;C/kph</button>
+                <button class="btn" id="fahrenheit" ng-click="unitChange(true)">&#176;F/mph</button>
+              </div>
+
+
+              <div class="row">
+                <div class="col-xs-1 icons"></div>
+              <div class="col-xs-2">
+                <i class="fa fa-thermometer-empty" aria-hidden="true">&nbsp;<span id="temperature">{{ weatherNow.temp}}</span><span>&#176;</span><span id="tempUnit"></span></i>
+              </div>
+
+                <div class="col-xs-1"></div>
+                  
+                 <div class="col-xs-3 icons">
+                  <i class="fa fa-tint" aria-hidden="true">&nbsp;<span id="humidity">{{  weatherNow.humidity }}</span></i>
+                </div>
+
+                <div class="col-xs-1"></div>
+
+                <div class="col-xs-3 icons">
+                  <i class="fa fa-tachometer" aria-hidden="true">&nbsp;<span id="wind">{{ weatherNow.wind}}</span></i>
+                </div>
+                <div class="col-xs-1"></div>
+
+            </div>
+              
+            <div id="imgDiv">
+              <p>Weather by</p>
+                <img id="wunderImg" src="img/wundergroundLogo_4c_rev_horz.png">
+             </div>
+              
+          </div>
+        </div>
+      </div>
+      <div class="footer"><a class="links" href="https://github.com/Missarachnid/fcc-weather-app" target="_blank">GitHub Repository</a><a href="http://www.mmkepler.com" target="_blank" class="links">mmkepler.com</a></div>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+      <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+      <script src="js/app.js"></script>
+      <script src="controllers/controller1.js"></script>
+
+  </body>
+</html>
+
