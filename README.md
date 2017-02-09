@@ -5,6 +5,7 @@
 +  CSS  
 +  Javascript  
 +  Jquery  
++  Angular.js
 +  Weather Underground API 
 +  Bootstrap  
 
