@@ -7,12 +7,14 @@ angular.module('myapp')
     $scope.weather = {};
     $scope.cityForecast = "";
     if (navigator.geolocation) navigator.geolocation.getCurrentPosition(onPositionUpdate);
- 
-    function onPositionUpdate(position) {
-      var lati = position.coords.latitude;
-      var longi = position.coords.longitude;
+     
+      function startForecast(){
+    //function onPositionUpdate(position) {
+      //var lati = position.coords.latitude;
+      //var longi = position.coords.longitude;
       /*var url = 'https://api.wunderground.com/api/4a82154c39d11213/conditions/geolocation/q/' + lati + ',' + longi + '.json';*/
-      var url = 'https://api.wunderground.com/api/4a82154c39d11213/geolookup/q/' + lati + ',' + longi + '.json';
+     // var url = 'https://api.wunderground.com/api/4a82154c39d11213/geolookup/q/' + lati + ',' + longi + '.json';
+      var url = "https://api.wunderground.com/api/4a82154c39d11213/geolookup/q/autoIp.json";
       $http.get(url)
         .then(function(info) {
           console.log(info);
@@ -23,7 +25,7 @@ angular.module('myapp')
       
         });
     }
-    $scope.retrieveCity = function(country, state, city){
+    /*$scope.retrieveCity = function(country, state, city){
      city = city.replace(" ", "_");
       
      if(country === "US"){
@@ -34,7 +36,7 @@ angular.module('myapp')
      $http.get($scope.cityForecast)
       .then(function(data){
        console.log(data);
-     });
+     });*/
      
       
    };
