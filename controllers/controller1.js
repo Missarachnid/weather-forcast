@@ -6,7 +6,7 @@ angular.module('myapp')
     $scope.location = {};
     $scope.weather = {};
     $scope.cityForecast = "";
-    if (navigator.geolocation) navigator.geolocation.getCurrentPosition(onPositionUpdate);
+    //if (navigator.geolocation) navigator.geolocation.getCurrentPosition(onPositionUpdate);
      
       function startForecast(){
     //function onPositionUpdate(position) {
