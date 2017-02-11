@@ -14,7 +14,7 @@ angular.module('myapp')
       //var longi = position.coords.longitude;
       /*var url = 'https://api.wunderground.com/api/4a82154c39d11213/conditions/geolocation/q/' + lati + ',' + longi + '.json';*/
      // var url = 'https://api.wunderground.com/api/4a82154c39d11213/geolookup/q/' + lati + ',' + longi + '.json';
-      var url = "https://api.wunderground.com/api/4a82154c39d11213/geolookup/q/autoIp.json";
+      var url = "https://api.wunderground.com/api/4a82154c39d11213/geolookup/forecast/q/autoip.json";
       $http.get(url)
         .then(function(info) {
           console.log(info);
@@ -39,7 +39,7 @@ angular.module('myapp')
      });*/
      
       
-   };
+   //};
   
   });
   
