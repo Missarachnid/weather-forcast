@@ -24,7 +24,7 @@ angular.module('myapp')
           $scope.retrieveCity($scope.location.country, $scope.location.state, $scope.location.city)
       
         });
-    }
+    //}
     /*$scope.retrieveCity = function(country, state, city){
      city = city.replace(" ", "_");
       
@@ -39,7 +39,7 @@ angular.module('myapp')
      });*/
      
       
-   //};
+   };
   
   });
   
