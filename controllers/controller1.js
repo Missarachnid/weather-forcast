@@ -29,7 +29,7 @@ angular.module('myapp')
      if(country === "US"){
        $scope.cityForecast = 'https://api.wunderground.com/api/4a82154c39d11213/forecast/q/' + state + "/" + city + ".json";
      }else{
-        $scope.cityForecast = 'https://api.wunderground.com/api/4a82154c39d11213/forecast/q/' + country + "/" + city + ".json
+        $scope.cityForecast = 'https://api.wunderground.com/api/4a82154c39d11213/forecast/q/' + country + "/" + city + ".json";
      }
      $http.get($scope.cityForecast)
       .then(function(data){
