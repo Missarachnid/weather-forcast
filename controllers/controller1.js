@@ -17,7 +17,7 @@ angular.module('myapp')
         .then(function(info) {
           console.log(info);
           $scope.location.city = info.data.location.city;
-          $scope.location.state = info.data.nearby_weather_stations.state;
+          $scope.location.state = info.data.location.nearby_weather_stations.state;
           $scope.location.country = info.data.country;
           $scope.retrieveCity($scope.location.country, $scope.location.state, $scope.location.city)
       
