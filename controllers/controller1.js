@@ -16,7 +16,7 @@ angular.module('myapp')
         .then(function(info) {
         console.log(info);
             
-          /*$scope.weatherNow = {
+          $scope.weatherNow = {
             city: info.data.current_observation.display_location.city,
             description: info.data.current_observation.weather,
             temp_f: Math.round(info.data.current_observation.temp_f),
@@ -27,9 +27,9 @@ angular.module('myapp')
             wind_kph: Math.round(info.data.current_observation.wind_kph) + "kph",
             wind: null,
             imageSrc: info.data.current_observation.icon_url
-          };*/
+          };
         
-          /*var currentTime = new Date();
+          var currentTime = new Date();
           var hours = currentTime.getHours();
           var minutes = currentTime.getMinutes();
           var ending = "AM";
@@ -69,7 +69,7 @@ angular.module('myapp')
             document.getElementById("celsius").style.backgroundColor = "#99e6ff";
             $scope.weatherNow.temp = $scope.weatherNow.temp_c;
             $scope.weatherNow.wind = $scope.weatherNow.wind_kph;
-          }*/
+          }
         };
        
       
