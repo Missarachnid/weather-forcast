@@ -20,7 +20,6 @@ angular.module('myapp')
       var longi = position.coords.longitude;
       var url = 'https://api.wunderground.com/api/4a82154c39d11213/forecast/q/' + lati + ',' + longi + '.json';
      
-      
       $http.get(url)
         .then(function(info) {
           //console.log(info);
@@ -36,6 +35,10 @@ angular.module('myapp')
             console.log($scope.forecast);
       
         });
+      $scope.search = function(e){
+        e.preventDefault();
+        
+      };
      
    }
   
