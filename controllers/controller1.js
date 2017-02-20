@@ -20,7 +20,7 @@ angular.module('myapp')
     function onPositionUpdate(position) {
       var lati = position.coords.latitude;
       var longi = position.coords.longitude;
-      var url = 'https://api.wunderground.com/api/4a82154c39d11213/conditions/geolocation/q/' + lati + ',' + longi + '.json';
+      var url = 'https://api.wunderground.com/api/4a82154c39d11213/forecast/q/' + lati + ',' + longi + '.json';
      
       
       $http.get(url)
