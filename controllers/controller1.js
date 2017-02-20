@@ -25,7 +25,7 @@ angular.module('myapp')
       $http.get(url)
         .then(function(info) {
          // console.log(info);
-          for(var i ; i < 9; i++){
+          for(var i = 0; i <= 8; i++){
             $scope.objects[i] = {
               title: info.data.forecast.txt_forecast.forecastday.i.title,
               icon: info.data.forecast.txt_forecast.forecastday.i.icon_url,
