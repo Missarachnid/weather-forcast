@@ -14,54 +14,25 @@
   
 </head>
 
-  <body ng-app="myapp"  ng-controller="WeatherController">
-      <div class="center-block">
-        <div class="container">
-          <div id="weather">
-    
-            <div id="communication">
-            </div>
-              <h3 id="city">{{ weatherNow.city }}</h3>
-              <p id=time>{{ weatherNow.timeDate }}</p>
-              <div class="bg center-block">
-                <div id="icon"><img ng-src="{{ weatherNow.imageSrc }}">
-                </div>
-              </div>
-              <div>
-                <h4 id="description">{{ weatherNow.description }}</h4>
-              </div>
-               
-              <div class="buttons">
-                <button class="btn" id="celsius" ng-click="unitChange(false)">&#176;C/kph</button>
-                <button class="btn" id="fahrenheit" ng-click="unitChange(true)">&#176;F/mph</button>
-              </div>
-
-
-              <div class="row">
-                <div class="col-xs-1 icons"></div>
-              <div class="col-xs-2">
-                <i class="fa fa-thermometer-empty" aria-hidden="true">&nbsp;<span id="temperature">{{ weatherNow.temp}}</span><span>&#176;</span><span id="tempUnit"></span></i>
-              </div>
-
-                <div class="col-xs-1"></div>
-                  
-                 <div class="col-xs-3 icons">
-                  <i class="fa fa-tint" aria-hidden="true">&nbsp;<span id="humidity">{{  weatherNow.humidity }}</span></i>
-                </div>
-
-                <div class="col-xs-1"></div>
-
-                <div class="col-xs-3 icons">
-                  <i class="fa fa-tachometer" aria-hidden="true">&nbsp;<span id="wind">{{ weatherNow.wind}}</span></i>
-                </div>
-                <div class="col-xs-1"></div>
-
-            </div>
+  <body>
+    <div class="center-block">
+      <div class="container">
+        <div ng-app="myapp"  ng-controller="WeatherController">
+  
+           <div class="row">
+             <form>
+              <input type="search" name="citySearch" required>
+              <input type="submit"  value="Submit" >
+             </form>
+           </div>
+          
+           <div class="row">
+             <div id="card">
+               <h3><h3>
               
-            <div id="imgDiv">
-              <p>Weather by</p>
-                <img id="wunderImg" src="img/wundergroundLogo_4c_rev_horz.png">
              </div>
+           </div>   
+            
               
           </div>
         </div>
