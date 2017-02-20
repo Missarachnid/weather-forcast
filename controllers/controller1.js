@@ -26,13 +26,13 @@ angular.module('myapp')
         .then(function(info) {
          // console.log(info);
           for(var i ; i < 9; i++){
-            objects[i] = {
+            $scope.objects[i] = {
               title: info.data.forecast.txt_forecast.forecastday.i.title,
               icon: info.data.forecast.txt_forecast.forecastday.i.icon_url,
               conditionsI: info.data.forecast.txt_forecast.forecastday.i.fcttext,
               conditionsM: info.data.forecast.txt_forecast.forecastday.i.fcttext_metric,
             };
-            $scope.forecast.push(objects[i]);
+            $scope.forecast.push($scope.objects[i]);
             }
             console.log($scope.forecast);
       
