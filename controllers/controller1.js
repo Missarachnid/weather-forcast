@@ -1,4 +1,12 @@
 
+/*
+load forcast of current location on load. Then upon submit/enter return forecast for searched city. 
+Use Autocomplete API for search results. This will return a Json. list the city names from the Json, 
+and attach the link associated with each city so it will load the forecast from that city. Populate new 
+forecast into cards.
+
+*/
+
 "use strict";
 
 angular.module('myapp')
@@ -24,22 +32,7 @@ angular.module('myapp')
           //$scope.retrieveCity($scope.location.country, $scope.location.state, $scope.location.city)
       
         });
-      
-    //}
-    /*$scope.retrieveCity = function(country, state, city){
-     city = city.replace(" ", "_");
-      
-     if(country === "US"){
-       $scope.cityForecast = 'https://api.wunderground.com/api/4a82154c39d11213/forecast/q/' + state + "/" + city + ".json";
-     }else{
-        $scope.cityForecast = 'https://api.wunderground.com/api/4a82154c39d11213/forecast/q/' + country + "/" + city + ".json";
-     }
-     $http.get($scope.cityForecast)
-      .then(function(data){
-       console.log(data);
-     });*/
      
-      
    };
   
   });
