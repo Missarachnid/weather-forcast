@@ -11,9 +11,8 @@ forecast into cards.
 
 angular.module('myapp')
   .controller("WeatherController", function($scope, $http){
-    $scope.location = {};
-    $scope.weather = {};
-    $scope.cityForecast = "";
+    $scope.objects = {};
+    $scope.forecast = [];
     if (navigator.geolocation) navigator.geolocation.getCurrentPosition(onPositionUpdate);
      
      
@@ -25,11 +24,17 @@ angular.module('myapp')
       
       $http.get(url)
         .then(function(info) {
-          console.log(info);
-          //$scope.location.city = info.data.location.city;
-          //$scope.location.state = info.data.location.nearby_weather_stations.state;
-          //$scope.location.country = info.data.country;
-          //$scope.retrieveCity($scope.location.country, $scope.location.state, $scope.location.city)
+         // console.log(info);
+          for(var i ; i < 9; i++){
+            objects[i] = {
+              title: info.data.forecast.txt_forecast.forecastday.i.title,
+              icon: info.data.forecast.txt_forecast.forecastday.i.icon_url,
+              conditionsI: info.data.forecast.txt_forecast.forecastday.i.fcttext,
+              conditionsM: info.data.forecast.txt_forecast.forecastday.i.fcttext_metric,
+            };
+            $scope.forecast.push(objects[i]);
+            }
+            console.log($scope.forecast);
       
         });
      
