@@ -24,7 +24,7 @@ angular.module('myapp')
       $http.get(url)
         .then(function(info) {
           console.log(info);
-          /*for(var i = 0; i <= 8; i++){
+          for(var i = 0; i < 8; i++){
            
             $scope.forecast[i] = {
               title: info.data.forecast.txt_forecast.forecastday[i].title,
@@ -32,7 +32,7 @@ angular.module('myapp')
               conditionsI: info.data.forecast.txt_forecast.forecastday[i].fcttext,
               conditionsM: info.data.forecast.txt_forecast.forecastday[i].fcttext_metric,
             };
-            }*/
+            }
             
       
         });
