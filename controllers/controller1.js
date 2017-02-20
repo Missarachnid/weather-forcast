@@ -23,16 +23,16 @@ angular.module('myapp')
       
       $http.get(url)
         .then(function(info) {
-         // console.log(info);
-          for(var i = 0; i <= 8; i++){
+          console.log(info);
+          /*for(var i = 0; i <= 8; i++){
            
             $scope.forecast[i] = {
-              title: info.data.forecast.txt_forecast.forecastday.[i].title,
-              icon: info.data.forecast.txt_forecast.forecastday.[i].icon_url,
-              conditionsI: info.data.forecast.txt_forecast.forecastday.[i].fcttext,
-              conditionsM: info.data.forecast.txt_forecast.forecastday.[i].fcttext_metric,
+              title: info.data.forecast.txt_forecast.forecastday[i].title,
+              icon: info.data.forecast.txt_forecast.forecastday[i].icon_url,
+              conditionsI: info.data.forecast.txt_forecast.forecastday[i].fcttext,
+              conditionsM: info.data.forecast.txt_forecast.forecastday[i].fcttext_metric,
             };
-            }
+            }*/
             
       
         });
