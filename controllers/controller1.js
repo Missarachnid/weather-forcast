@@ -23,7 +23,7 @@ angular.module('myapp')
       
       $http.get(url)
         .then(function(info) {
-          console.log(info);
+          //console.log(info);
           for(var i = 0; i < 8; i++){
            
             $scope.forecast[i] = {
@@ -33,7 +33,7 @@ angular.module('myapp')
               conditionsM: info.data.forecast.txt_forecast.forecastday[i].fcttext_metric,
             };
             }
-            
+            console.log($scope.forecast);
       
         });
      
