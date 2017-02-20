@@ -11,7 +11,7 @@ forecast into cards.
 
 angular.module('myapp')
   .controller("WeatherController", function($scope, $http){
-    $scope.forecast = {};
+    $scope.forecast = [];
     if (navigator.geolocation) navigator.geolocation.getCurrentPosition(onPositionUpdate);
      
      
@@ -25,7 +25,7 @@ angular.module('myapp')
         .then(function(info) {
          // console.log(info);
           for(var i = 0; i <= 8; i++){
-            $scope.objects[i] = {
+            $scope.forecast[i] = {
               title: info.data.forecast.txt_forecast.forecastday.i.title,
               icon: info.data.forecast.txt_forecast.forecastday.i.icon_url,
               conditionsI: info.data.forecast.txt_forecast.forecastday.i.fcttext,
