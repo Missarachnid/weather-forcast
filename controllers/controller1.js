@@ -33,11 +33,11 @@ angular.module('myapp')
               conditionsM: info.data.forecast.txt_forecast.forecastday.[i].fcttext_metric,
             };
             }
-            console.log($scope.objects);
+            
       
         });
      
-   };
+   }
   
   });
   
