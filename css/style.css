@@ -12,7 +12,17 @@ body {
   height: 100%;
 }
 
-#weather {
+form {
+  margin-top: 20px;
+}
+
+.footer{
+  margin-top: 20px;
+  height: 30px;
+}
+
+
+/*#weather {
   background-color: #333333;
   color: #f2f2f2;
   text-shadow: 1px 1px 1px black, -1px -1px 1px black;
@@ -80,10 +90,7 @@ body {
   width: 90px;
 }
 
-.footer{
-  margin-top: 20px;
-  height: 30px;
-}
+
 
 .links {
   font-size: 14px;
@@ -101,4 +108,4 @@ body {
   text-decoration: none;
 }
 
-
+*/
