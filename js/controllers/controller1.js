@@ -10,7 +10,8 @@ forecast into cards.
 
 angular.module('myapp')
   .controller("WeatherController", function($scope, $http){
-    $scope.forecast = [];
+    $scope.forecastDay = [];
+    $scope.forecastNight = [];
     if (navigator.geolocation) navigator.geolocation.getCurrentPosition(onPositionUpdate);
      
      
@@ -23,21 +24,29 @@ angular.module('myapp')
         .then(function(info) {
           //console.log(info);
           for(var i = 0; i < 8; i++){
-           
-            $scope.forecast[i] = {
+            var obj = {
               title: info.data.forecast.txt_forecast.forecastday[i].title,
               icon: info.data.forecast.txt_forecast.forecastday[i].icon_url,
               conditionsI: info.data.forecast.txt_forecast.forecastday[i].fcttext,
               conditionsM: info.data.forecast.txt_forecast.forecastday[i].fcttext_metric,
             };
+            
+            if(i%2 === 0){
+              $scope.forecastDay.push(obj);
+            }else{
+              $scope.forecastNight.push(obj);
             }
-            console.log($scope.forecast);
+        
+            
+            }
+            console.log($scope.forecastDay);
+            console.log($scope.forecastNight);
       
         });
-      $scope.search = function(e){
-        e.preventDefault();
+      //$scope.search = function(e){
+        //e.preventDefault();
         
-      };
+      //};
      
    }
   
