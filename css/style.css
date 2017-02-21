@@ -8,6 +8,7 @@ body {
   text-align: center;
   font-size: 16px;
   min-height:  100%;
+  width: 100%;
   position: relative;
   padding-bottom: 60px;
 }
@@ -32,6 +33,9 @@ form {
     bottom: 0;
 }
 
+.links {
+  margin: 0 10px 0 10px;
+}
 
 /*#weather {
   background-color: #333333;
