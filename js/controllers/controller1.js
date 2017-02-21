@@ -24,7 +24,7 @@ angular.module('myapp')
         .then(function(info) {
           //console.log(info);
           for(var i = 0; i < 8; i++){
-            var obj = {
+            var item = {
               title: info.data.forecast.txt_forecast.forecastday[i].title,
               icon: info.data.forecast.txt_forecast.forecastday[i].icon_url,
               conditionsI: info.data.forecast.txt_forecast.forecastday[i].fcttext,
@@ -32,9 +32,9 @@ angular.module('myapp')
             };
             
             if(i%2 === 0){
-              $scope.forecastDay.push(obj);
+              $scope.forecastDay.push(item);
             }else{
-              $scope.forecastNight.push(obj);
+              $scope.forecastNight.push(item);
             }
         
             
