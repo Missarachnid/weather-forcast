@@ -32,7 +32,7 @@ angular.module('myapp')
               conditionsM: info.data.forecast.txt_forecast.forecastday[i].fcttext_metric,
             };
             var temp = item.icon;
-            icon = icon.replace("http", "https");
+            temp = temp.replace("http", "https");
             item.icon = temp;
             $scope.forecast.push(item);
             
