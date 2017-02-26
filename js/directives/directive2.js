@@ -5,8 +5,8 @@ angular.module("myapp")
     return { 
     restrict: 'E', 
     scope: { 
-      info: '=' 
+      //info: '=' 
     }
     templateUrl: 'js/directives/cardNight.html' 
-  }; 
+  }
   });
