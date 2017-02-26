@@ -31,7 +31,7 @@ angular.module('myapp')
               conditionsI: info.data.forecast.txt_forecast.forecastday[i].fcttext,
               conditionsM: info.data.forecast.txt_forecast.forecastday[i].fcttext_metric,
             };
-            item.icon = item.icon.repleace("http", "https)
+            item.icon = item.icon.repleace(http, https);
             $scope.forecast.push(item);
             
             //if(i%2 === 0){
