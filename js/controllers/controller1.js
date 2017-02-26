@@ -35,6 +35,7 @@ angular.module('myapp')
             temp = temp.replace("http", "https");
             item.icon = temp;
             $scope.forecast.push(item);
+            console.log(temp);
             
             //if(i%2 === 0){
             //  $scope.forecastDay.push(item);
@@ -47,11 +48,7 @@ angular.module('myapp')
             //console.log($scope.forecastDay);
             //console.log($scope.forecastNight);
             //console.log($scope.forecast);
-            for(var i = 0; i < $scope.forecast.length; i++){
-              var el = $scope.forecast.i.icon;
-              console.log(el);
-            }
-        });
+            
       //$scope.search = function(e){
         //e.preventDefault();
         
