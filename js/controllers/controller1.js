@@ -45,15 +45,12 @@ angular.module('myapp')
             //}
         
             
-            }
+            });
             //console.log($scope.forecastDay);
             //console.log($scope.forecastNight);
             //console.log($scope.forecast);
             
-      //$scope.search = function(e){
-        //e.preventDefault();
-        
-      //};
+      
      
    }
   
