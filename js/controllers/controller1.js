@@ -47,9 +47,9 @@ angular.module('myapp')
             //console.log($scope.forecastDay);
             //console.log($scope.forecastNight);
             //console.log($scope.forecast);
-            $scope.forecast.forEach(function(){
-              console.log(icon);
-            });
+            for(var i = 0; i < $scope.forecast.length; i++){
+              console.log($scope.forecast.i.icon);
+            }
         });
       //$scope.search = function(e){
         //e.preventDefault();
