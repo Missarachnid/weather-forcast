@@ -4,9 +4,9 @@ angular.module("myapp")
   .directive("nightcardinfo", function(){
     return { 
     restrict: 'E', 
-    scope: { 
+    //scope: { 
       //info: '=' 
-    }
+    //},
     templateUrl: 'js/directives/cardNight.html' 
   }
   });
