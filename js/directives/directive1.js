@@ -3,9 +3,9 @@ angular.module("myapp")
   .directive("cardinfo", function(){
     return { 
     restrict: 'E', 
-     scope: { 
+     //scope: { 
       
-    }, 
+   // }, 
     templateUrl: 'js/directives/card.html' 
   }; 
   });
