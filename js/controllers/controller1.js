@@ -26,7 +26,7 @@ angular.module('myapp')
           for(var i = 0; i < 8; i++){
             var item = {
               title: info.data.forecast.txt_forecast.forecastday[i].title,
-              icon: info.data.forecast.txt_forecast.forecastday[i].icon_url,
+              icon: "https://crossorigin.me/" + info.data.forecast.txt_forecast.forecastday[i].icon_url,
               conditionsI: info.data.forecast.txt_forecast.forecastday[i].fcttext,
               conditionsM: info.data.forecast.txt_forecast.forecastday[i].fcttext_metric,
             };
