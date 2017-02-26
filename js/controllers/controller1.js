@@ -34,21 +34,22 @@ angular.module('myapp')
             var temp = item.icon;
             temp = temp.replace("http", "https");
             item.icon = temp;
-            console.log(temp);
-            $scope.forecast.push(item);
+            //console.log(temp);
+            //$scope.forecast.push(item);
             
             
-            //if(i%2 === 0){
-            //  $scope.forecastDay.push(item);
-            //}else{
-            //  $scope.forecastNight.push(item);
-            //}
+            if(i%2 === 0){
+              $scope.forecastDay.push(item);
+            }else{
+              $scope.forecastNight.push(item);
+            }
         
             
             }
             //console.log($scope.forecastDay);
             //console.log($scope.forecastNight);
-            console.log($scope.forecast);
+            console.log($scope.forecastDay);
+            console.log($scope.forecastDay);
             
       
      
