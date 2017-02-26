@@ -46,12 +46,9 @@ angular.module('myapp')
         
             
             }
-            //console.log($scope.forecastDay);
-            //console.log($scope.forecastNight);
             console.log($scope.forecastDay);
-            console.log($scope.forecastDay);
-            
-      
+            console.log($scope.forecastNight);
+          
      
    });
   
