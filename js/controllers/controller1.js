@@ -10,9 +10,9 @@ forecast into cards.
 
 angular.module('myapp')
   .controller("WeatherController", function($scope, $http){
-    //$scope.forecastDay = [];
-    //$scope.forecastNight = [];
-    $scope.forecast = [];
+    $scope.forecastDay = [];
+    $scope.forecastNight = [];
+    //$scope.forecast = [];
     if (navigator.geolocation) navigator.geolocation.getCurrentPosition(onPositionUpdate);
      
      
