@@ -7,6 +7,6 @@ angular.module("myapp")
     scope: { 
       info: '=' 
     }
-    templateUrl: 'js/directives2/cardNight.html' 
+    templateUrl: 'js/directives/cardNight.html' 
   }; 
   });
