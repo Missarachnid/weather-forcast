@@ -6,20 +6,20 @@ and attach the link associated with each city so it will load the forecast from 
 forecast into cards.
 */
 
-"use strict";
+'use strict';
 
-angular.module('myapp')
+angular.module("myapp", [])
   .controller("WeatherController", function($scope, $http){
     $scope.forecastDay = [];
     $scope.forecastNight = [];
     //$scope.forecast = [];
-    if (navigator.geolocation) navigator.geolocation.getCurrentPosition(onPositionUpdate);
-     
+    if (navigator.geolocation){ navigator.geolocation.getCurrentPosition(onPositionUpdate);
+    }
      
     function onPositionUpdate(position) {
       var lati = position.coords.latitude;
       var longi = position.coords.longitude;
-      var url = 'https://api.wunderground.com/api/4a82154c39d11213/forecast/q/' + lati + ',' + longi + '.json';
+      var url = "https://api.wunderground.com/api/4a82154c39d11213/forecast/q/" + lati + "," + longi + ".json";
      
       $http.get(url)
         .then(function(info) {
@@ -48,8 +48,8 @@ angular.module('myapp')
             }
             console.log($scope.forecastDay);
             console.log($scope.forecastNight);
+            //console.log($scope.forecast);
           
-     
    });
   
   }

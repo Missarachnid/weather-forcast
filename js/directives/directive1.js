@@ -7,5 +7,5 @@ angular.module("myapp")
       
    // }, 
     templateUrl: 'js/directives/card.html' 
-  }; 
+  }
   });
