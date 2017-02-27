@@ -1,10 +1,83 @@
-<div class="col-xl-3">
+<div class="col-md-3 col-xs-6">
   <div class="cardOuter">
-    <h4 class="cardTitle">{{items.day}}</h4>
+      <h3 class="cardTitle">{{items.day}}</h3>
+    <div class="section">
+      <h4 class="cardTitle">{{items.day}} Day</h4>
       <img src="{{items.icon}}">
-    <div class="cardForecast">
       <p class="cardText">{{items.conditionsI}}</p>
+    </div>
+    <div class="section">
+      <h4 class="cardTitle">{{forecastNight[$index].day}}</h4>
+      <img src="{{forecastNight[$index].icon}}">
+      <p class="cardText">{{forecastNight[$index].conditionsI}}</p>
+    </div>
+  </div>
+</div>
+<div class="clearfix" ng-if="($index+1)%4==0"></div>
+<!-- <div class="row">
+<div class="col-md-3 col-xs-6">
+  <div class="cardOuter">
+      <h3 class="cardTitle">{{forecastDay[0].day}}</h3>
+    <div class="section">
+      <h4 class="cardTitle">{{forecastDay[0].day}} Day</h4>
+      <img src="{{forecastDay[0].icon}}">
+      <p class="cardText">{{forecastDay[0]conditionsI}}</p>
+    </div>
+    <div class="section">
+      <h4 class="cardTitle">{{forecastNight[0].day}}</h4>
+      <img src="{{forecastNight[0].icon}}">
+      <p class="cardText">{{forecastNight[0].conditionsI}}</p>
     </div>
   </div>
 </div>
 
+<div class="col-md-3 col-xs-6">
+  <div class="cardOuter">
+      <h3 class="cardTitle">{{$scope.forecastDay[1].day}}</h3>
+    <div class="section">
+      <h4 class="cardTitle">{{forecastDay[1].day}} Day</h4>
+      <img src="{{forecastDay[1].icon}}">
+      <p class="cardText">{{forecastDay[1]conditionsI}}</p>
+    </div>
+    <div class="section">
+      <h4 class="cardTitle">{{forecastNight[1].day}}</h4>
+      <img src="{{forecastNight[1].icon}}">
+      <p class="cardText">{{forecastNight[1].conditionsI}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-xs-6"></div>
+
+<div class="col-md-3 col-xs-6">
+  <div class="cardOuter">
+      <h3 class="cardTitle">{{forecastDay[2].day}}</h3>
+    <div class="section">
+      <h4 class="cardTitle">{{forecastDay[2].day}} Day</h4>
+      <img src="{{forecastDay[2].icon}}">
+      <p class="cardText">{{forecastDay[2]conditionsI}}</p>
+    </div>
+    <div class="section">
+      <h4 class="cardTitle">{{forecastNight[2].day}}</h4>
+      <img src="{{forecastNight[2].icon}}">
+      <p class="cardText">{{forecastNight[2].conditionsI}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 col-xs-6">
+  <div class="cardOuter">
+      <h3 class="cardTitle">{{forecastDay[3].day}}</h3>
+    <div class="section">
+      <h4 class="cardTitle">{{forecastDay[3].day}} Day</h4>
+      <img src="{{forecastDay[3].icon}}">
+      <p class="cardText">{{forecastDay[3]conditionsI}}</p>
+    </div>
+    <div class="section">
+      <h4 class="cardTitle">{{forecastNight[3].day}}</h4>
+      <img src="{{forecastNight[3].icon}}">
+      <p class="cardText">{{forecastNight[3].conditionsI}}</p>
+    </div>
+  </div>
+</div>
+    </div> -->

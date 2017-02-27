@@ -17,26 +17,25 @@
       <div class="container">
         <div ng-app="myapp"  ng-controller="WeatherController" >
   
-           <div class="row">
-             <form>
+          <div class="row">
+            <form>
               <input type="search" name="citySearch" required>
               <input type="submit"  value="Submit" >
-             </form>
-           </div>
+            </form>
+            <div>
+              <h2 class="cityName">{{city}}</h2>
+            </div>
+          </div>
           
            <div class="row">
-             <div id="card" ng-repeat="items in forecastDay">
+             <div id="card" ng-repeat="items in forecastDay track by $index" >
                <cardinfo></cardinfo>
              </div>
-             </div>
-             <div class="row">
-               <div id="cardNight" ng-repeat="items2 in forecastNight">
-                 <nightcardinfo></nightcardinfo>
-               </div>
-             </div>
              
-              
-             
+             </div>
+            <div ng-repeat-end=""></div>
+            <!-- <cardinfo></cardinfo> -->
+            
           </div>
         </div>
       </div>

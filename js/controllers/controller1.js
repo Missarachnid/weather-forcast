@@ -12,45 +12,44 @@ angular.module("myapp", [])
   .controller("WeatherController", function($scope, $http){
     $scope.forecastDay = [];
     $scope.forecastNight = [];
-    //$scope.forecast = [];
-    if (navigator.geolocation){ navigator.geolocation.getCurrentPosition(onPositionUpdate);
-    }
+    $scope.city = "";
      
     function onPositionUpdate(position) {
       var lati = position.coords.latitude;
       var longi = position.coords.longitude;
-      var url = "https://api.wunderground.com/api/4a82154c39d11213/forecast/q/" + lati + "," + longi + ".json";
+      var url = "https://api.wunderground.com/api/4a82154c39d11213/forecast/geolookup/q/" + lati + "," + longi + ".json";
      
-      $http.get(url)
+      $http.get(url)    
         .then(function(info) {
           console.log(info);
+          $scope.city = info.data.location.city;
           for(var i = 0; i <= 8; i++){
-            var item = {
+            $scope.item = {
               day: info.data.forecast.txt_forecast.forecastday[i].title,
               icon: info.data.forecast.txt_forecast.forecastday[i].icon_url,
               conditionsI: info.data.forecast.txt_forecast.forecastday[i].fcttext,
               conditionsM: info.data.forecast.txt_forecast.forecastday[i].fcttext_metric,
             };
-            var temp = item.icon;
+          
+            var temp = $scope.item.icon;
             temp = temp.replace("http", "https");
-            item.icon = temp;
-            //console.log(temp);
-            //$scope.forecast.push(item);
-            
+            $scope.item.icon = temp;
             
             if(i%2 === 0){
-              $scope.forecastDay.push(item);
+              $scope.forecastDay.push($scope.item);
             }else{
-              $scope.forecastNight.push(item);
+              $scope.forecastNight.push($scope.item);
             }
-        
+
+        }
             
-            }
-            console.log($scope.forecastDay);
-            console.log($scope.forecastNight);
-            //console.log($scope.forecast);
-          
-   });
-  
+     });
+      
+        console.log($scope.forecastDay);
+        console.log($scope.forecastNight);
   }
+    
+    if (navigator.geolocation){ 
+        navigator.geolocation.getCurrentPosition(onPositionUpdate);
+    }
 });
