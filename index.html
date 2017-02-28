@@ -11,35 +11,42 @@
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
-  <body>
+  <body ng-app="myapp"  ng-controller="WeatherController">
+     <div id="loader">
+         <i class="fa fa-spinner fa-pulse" aria-hidden="true"></i>
+    </div>
+    <div id="mainBody">
     <div class="center-block">
       <div class="container">
-        <div ng-app="myapp"  ng-controller="WeatherController" >
-  
-          <div class="row">
-            <form>
-              <input type="search" name="citySearch" required>
-              <input type="submit"  value="Submit" >
-            </form>
-            <div>
-              <h2 class="cityName">{{city}}</h2>
+        
+          <div class="row bgRow">
+            <div class="col-sm-6 col-xs-12">
+              <div id="cardHold">
+                <h5>Current Conditions in:</h5>
+                <h2>{{city}}</h2>
+                <img class="bg icon" src="{{current.icon}}" >
+                <p class="space" >{{current.conditions}}</p>
+                <h4 >{{current.tempI}}  &deg;F</h4>
+              </div>
             </div>
-          </div>
-          
-           <div class="row">
-             <div id="card" ng-repeat="items in forecastDay track by $index" >
-               <cardinfo></cardinfo>
-             </div>
-             
-             </div>
-            <div ng-repeat-end=""></div>
-            <!-- <cardinfo></cardinfo> -->
-            
-          </div>
+            <div class="col-sm-6 col-xs-12">
+              <div id="bottomCardOuter">
+                <div ng-repeat="item in forecast" >
+                  <cardinfo></cardinfo>
+                </div>
+              </div>
+                  
+            </div>
+
         </div>
       </div>
-      <div class="footer"><a class="links" href="https://github.com/Missarachnid/fcc-weather-app-angular" target="_blank">GitHub Repository</a><a href="http://www.mmkepler.com" target="_blank" class="links">mmkepler.com</a></div>
+      </div>
+        </div>
+      <div class="footer">
+        <img id="wunderImg" src="https://icons.wxug.com/logos/PNG/wundergroundLogo_4c_rev_horz.png">
+        <a class="links" href="https://github.com/Missarachnid/fcc-weather-app-angular" target="_blank">GitHub Repository</a><a href="http://www.mmkepler.com" target="_blank" class="links">mmkepler.com</a>
+      </div>
+    
       
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>

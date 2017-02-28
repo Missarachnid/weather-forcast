@@ -1,16 +1,21 @@
 html{
   height: 100%;
+  width: 100%;
 }
 
 body {
-  font-family: 'Eczar', serif;
-  color: black;
+  font-family: 'PT Mono', monospace;
+  color: white;
   text-align: center;
-  font-size: 12px;
+  font-size: 20px;
   min-height:  100%;
   width: 100%;
   position: relative;
   padding-bottom: 60px;
+  
+  background: #C33764; 
+  background: -webkit-linear-gradient(to left, #009799 , #660066); 
+  background: linear-gradient(to left, #009799 , #660066); 
 }
 
 .container {
@@ -24,117 +29,127 @@ form {
   margin-top: 20px;
 }
 
+.bgRow {
+  /*background-color: #009799;*/
+}
+
 .footer{
-  margin-top: 20px;
-  height: 40px;
+  padding: 10px;
   position: absolute; 
   left: 0; 
   right: 0; 
   bottom: 0;
-  border-top: 2px solid black;
-  box-shadow: 0 1px 1px 0 black;
+  font-size: 14px;
+  background-color: black;
+
+  box-shadow: 0 -2px 2px 0 black;
 }
 
 .cardOuter {
-  border: 2px solid black;
-  padding: 5px 10px;
-
-  margin: 20px 0 20px auto;
+  /*background: linear-gradient(to bottom, rgb(0, 121, 119) 0%, rgb(0, 151, 153) 15%, rgb(0, 151, 153) 85%,rgb(0, 121, 119) 100%);
+  padding: 10px; */
+  /*box-shadow: -2px -1px 1px 1px #007977;*/
+  padding: 10px;
+  color: white;
+  margin: 0 auto;
 }
 
-.section {
-    margin: 10px 0;
-    min-height: 165px;
+#bottomCardOuter {
+    margin: 40px 0 20px 0;
+    text-align: center;
 }
 
-.links {
-  margin: 0 10px 0 10px;
+#card {
+  min-height: 240px;
 }
 
-/*#weather {
-  background-color: #333333;
-  color: #f2f2f2;
-  text-shadow: 1px 1px 1px black, -1px -1px 1px black;
-  border: 5px ridge lightgray;
-  padding: 20px 0;
-  display: inline-block;
-  margin-top: 30px;
-  width: 295px;
-  height: 330px;
+#cardHold {
+  margin-top: 20px;
+  padding: 20px;
+  min-height: 240px;
 }
 
-#city {
-  font-size: 30px;
-  margin-top: 0;
-  font-weight: bold;
-  max-height: 33px;
-}
-#time {
-  font-size: 14px;
-  max-height: 20px;  
+#center {
+    margin: 0 auto;
 }
 
-.icons {
-  width: 60px;
-    
+.space {
+  margin-top: 10px;
 }
-.col-xs-1 {
-   width: 10px;
-   margin: 0; 
+
+#imgHolder {
+    margin: 0 auto;
+    text-align: center;
+  
+}
+
+.hold {
+  display: inline;
 }
 
 .bg {
-  background: -webkit-radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0.4) 95%);
-  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0.4) 95%);
-  border-radius: 50px;
-  width: 100px;
-  height: 53px;
+  background: -webkit-radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 1) 55%, rgba(255, 255, 255, 0.4) 65%, rgba(255, 255, 255, 0.0) 75%);
 }
 
-.btn {
-  color: black;
-  border-radius: 20px 0;
-   padding: 2px 10px;
-  margin: 10px;
-  box-shadow: 1px 1px 2px black, -1px -1px 2px black;
-  font-size: 12px;
-  border: none;
+.icon {
+  height: 40px;
+  padding: 5px;
 }
 
-.btn:hover, .btn:active, .btn:focus, .btn:focus, .btn:hover, .btn:active:focus {
-  outline: 0;
-  border: none;
-  outline-offset: 0;   
+.links {
+  margin: 0 15px 0 15px;
+  color: white;
 }
 
-.numbers {
-  margin-top: 15px;
+.links:hover, .links:active, .links:focus {
+  text-decoration: none;
+  color: 
 }
 
-#imgDiv {
-  font-size: 14px;
+#loader {
+    position: absolute;
+    left: 50%;
+    margin-left: -70px;
+    top: 15%;
+    font-size: 140px;
+    color: rgba(255, 255, 255, 0.9);
+    visibility: visible;
+}
+
+#mainBody {
+    visibility: hidden;
 }
 
 #wunderImg {
   width: 90px;
+  padding-bottom: 5px;
+  margin: 0 20px 0 20px;
 }
 
-
-
-.links {
-  font-size: 14px;
-  background-color: #333333;
-  color: #f2f2f2;
-  text-shadow: 1px 1px 1px black, -1px -1px 1px black;
-  border: 2px ridge lightgray;
-  padding: 5px 10px;
-  display: inline-block;
-  margin: 20px 5px 0 5px;
+@media only screen and (min-width : 800px) {
+    #cardHold {
+      margin-left: 50px;
+    }
+    #bottomCardOuter {
+      margin-right: 50px;
+    }
 }
 
-.links:hover, .links:focus, .links:active {
-  color: #f2f2f2;
-  text-decoration: none;
+ @media only screen and (min-width : 992px) {
+    #cardHold {
+      margin-left: 100px;
+    }
+    #bottomCardOuter {
+      margin-right: 100px;
+    }
 }
 
-*/
+@media only screen and (min-width : 1200px) {
+  #cardHold {
+      margin-left: 200px;
+    }
+  #bottomCardOuter {
+      margin-right: 200px;
+    }
+}
+

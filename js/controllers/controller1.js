@@ -1,55 +1,73 @@
 
-/*
-load forcast of current location on load. Then upon submit/enter return forecast for searched city. 
-Use Autocomplete API for search results. This will return a Json. list the city names from the Json, 
-and attach the link associated with each city so it will load the forecast from that city. Populate new 
-forecast into cards.
-*/
-
 'use strict';
 
 angular.module("myapp", [])
   .controller("WeatherController", function($scope, $http){
-    $scope.forecastDay = [];
-    $scope.forecastNight = [];
-    $scope.city = "";
-     
+    $scope.forecast = [];
+    $scope.current = {};
+    $scope.city = ""; 
+    $scope.load = false;
+    var main = document.getElementById("mainBody");
+    var loader = document.getElementById("loader");
+    
+    
+    $scope.loader =  function(){
+        setTimeout(function(){
+            main.style.visibility = "visible";
+            loader.style.visibility = "hidden";
+        }, 6000);
+    };
+    $scope.loader();
+    
     function onPositionUpdate(position) {
       var lati = position.coords.latitude;
       var longi = position.coords.longitude;
-      var url = "https://api.wunderground.com/api/4a82154c39d11213/forecast/geolookup/q/" + lati + "," + longi + ".json";
+      var url = "https://api.wunderground.com/api/4a82154c39d11213/conditions/forecast/q/" + lati + "," + longi + ".json";
      
       $http.get(url)    
         .then(function(info) {
           console.log(info);
-          $scope.city = info.data.location.city;
-          for(var i = 0; i <= 8; i++){
-            $scope.item = {
-              day: info.data.forecast.txt_forecast.forecastday[i].title,
-              icon: info.data.forecast.txt_forecast.forecastday[i].icon_url,
-              conditionsI: info.data.forecast.txt_forecast.forecastday[i].fcttext,
-              conditionsM: info.data.forecast.txt_forecast.forecastday[i].fcttext_metric,
-            };
+          $scope.city = info.data.current_observation.display_location.full;
+          $scope.current.tempI = info.data.current_observation.temp_f;
+          $scope.current.tempI = Math.round($scope.current.tempI);
+          $scope.current.tempM = info.data.current_observation.temp_c;
+          $scope.current.conditions = info.data.current_observation.weather;
+          $scope.current.icon = info.data.current_observation.icon_url;
+          $scope.current.icon = $scope.current.icon.replace("http", "https");
+        
           
-            var temp = $scope.item.icon;
-            temp = temp.replace("http", "https");
-            $scope.item.icon = temp;
+          for(var i = 0; i <= 4; i++){
+            $scope.item = {
+              day: info.data.forecast.simpleforecast.forecastday[i].date.weekday_short,
+              conditions: info.data.forecast.simpleforecast.forecastday[i].conditions,
+              icon: info.data.forecast.simpleforecast.forecastday[i].icon_url,
+              tempHighI: info.data.forecast.simpleforecast.forecastday[i].high.fahrenheit,
+              tempHighM: info.data.forecast.simpleforecast.forecastday[i].high.celsius,
+              tempLowI: info.data.forecast.simpleforecast.forecastday[i].low.fahrenheit,
+              tempLowM: info.data.forecast.simpleforecast.forecastday[i].low.celsius,
+            };
+              
             
-            if(i%2 === 0){
-              $scope.forecastDay.push($scope.item);
-            }else{
-              $scope.forecastNight.push($scope.item);
+            $scope.item.icon = $scope.item.icon.replace("http", "https");
+            $scope.item.tempHighI = Math.round($scope.item.tempHighI);
+            $scope.item.tempHighM = Math.round($scope.item.tempHighM);
+            $scope.item.tempLowI = Math.round($scope.item.tempLowI);
+            $scope.item.tempLowM = Math.round($scope.item.tempLowM);
+            
+            $scope.forecast.push($scope.item);
             }
-
-        }
             
      });
-      
-        console.log($scope.forecastDay);
-        console.log($scope.forecastNight);
+       console.log($scope.city);
+       console.log($scope.forecast);
+       console.log($scope.current);
+       
+        
   }
-    
+     
     if (navigator.geolocation){ 
         navigator.geolocation.getCurrentPosition(onPositionUpdate);
     }
+    
+    
 });
