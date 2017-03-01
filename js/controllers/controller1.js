@@ -1,4 +1,4 @@
-
+/* Rewrite code to include some success and error functions to deal with the $http requests*/
 'use strict';
 
 angular.module("myapp", [])
