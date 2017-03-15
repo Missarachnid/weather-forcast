@@ -7,6 +7,7 @@ angular.module("myapp", [])
     $scope.current = {};
     $scope.city = ""; 
     $scope.load = false;
+    $scope.weatherObj = {};
     var main = document.getElementById("mainBody");
     var loader = document.getElementById("loader");
     
@@ -18,6 +19,10 @@ angular.module("myapp", [])
         }, 6000);
     };
     $scope.loader();
+  
+    if (navigator.geolocation){ 
+        navigator.geolocation.getCurrentPosition(onPositionUpdate);
+    }
     
     function onPositionUpdate(position) {
       var lati = position.coords.latitude;
@@ -27,6 +32,7 @@ angular.module("myapp", [])
       $http.get(url)    
         .then(function(info) {
           console.log(info);
+          
           $scope.city = info.data.current_observation.display_location.full;
           $scope.current.tempI = info.data.current_observation.temp_f;
           $scope.current.tempI = Math.round($scope.current.tempI);
@@ -35,8 +41,9 @@ angular.module("myapp", [])
           $scope.current.icon = info.data.current_observation.icon_url;
           $scope.current.icon = $scope.current.icon.replace("http", "https");
         
-          
-          for(var i = 0; i <= 4; i++){
+        });  
+      }
+         /* for(var i = 0; i <= 4; i++){
             $scope.item = {
               day: info.data.forecast.simpleforecast.forecastday[i].date.weekday_short,
               conditions: info.data.forecast.simpleforecast.forecastday[i].conditions,
@@ -55,19 +62,17 @@ angular.module("myapp", [])
             $scope.item.tempLowM = Math.round($scope.item.tempLowM);
             
             $scope.forecast.push($scope.item);
-            }
+            }*/
             
-     });
-       console.log($scope.city);
-       console.log($scope.forecast);
-       console.log($scope.current);
+     
+       //console.log($scope.city);
+      // console.log($scope.forecast);
+       //console.log($scope.current);
        
         
-  }
+  
      
-    if (navigator.geolocation){ 
-        navigator.geolocation.getCurrentPosition(onPositionUpdate);
-    }
+    
     
     
 });
