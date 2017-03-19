@@ -1,5 +1,6 @@
-# Forecast App - WIP
-  This is a rebuild of my Free Code Camp weather app with forecast instead of current Conditions
+# Forecast App
+  This is a rebuild of my Free Code Camp weather app with 4 day forecast info added.
+  It is responsive as well.
 ### Built With
 +  HTML  
 +  CSS  

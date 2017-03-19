@@ -1,6 +1,6 @@
 
 "use strict";
 
-angular.module("myapp", []);
+var app = angular.module("myapp", []);
 
   

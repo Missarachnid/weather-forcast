@@ -1,6 +1,6 @@
 //custom directive to insert card html from template
-angular.module("myapp")
-  .directive("cardinfo", function(){
+
+  app.directive("cardinfo", function(){
     return { 
     restrict: 'E', 
      //scope: { 
