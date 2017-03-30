@@ -25,6 +25,12 @@ body {
   height: 100%;
 }
 
+.nav {
+  background-color: black;
+  height: 40px;
+  width: 100%;
+}
+
 form {
   margin-top: 20px;
 }
