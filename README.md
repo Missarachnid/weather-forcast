@@ -16,4 +16,4 @@
 +  Free Code Camp 
 +  Weather Underground
 
-### The project can be found here https://missarachnid.github.io/weather-forecast/
+### The project can be found [here](https://missarachnid.github.io/weather-forecast/)
